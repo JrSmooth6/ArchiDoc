@@ -1,1 +1,50 @@
-<h1>Comment ca mon boeuf? </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroboscope</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        #strobe {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="strobe"></div>
+
+    <script>
+        const strobe = document.getElementById('strobe');
+        let isOn = false;
+
+        function toggleStrobe() {
+            isOn = !isOn;
+            strobe.style.opacity = isOn ? 1 : 0;
+
+            if (isOn) {
+                // Adjust the interval (in milliseconds) for the strobe effect
+                setInterval(toggleStrobe, 100);
+            }
+        }
+
+        // Call the function to start the strobe effect
+        toggleStrobe();
+    </script>
+</body>
+</html>
