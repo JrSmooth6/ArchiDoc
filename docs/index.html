@@ -3,48 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stroboscope</title>
+    <title>Page d'Accueil Chill</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            margin: 0;
-            background-color: #000;
+            background-color: #1a1a1a;
             overflow: hidden;
+            color: #fff;
         }
 
-        #strobe {
-            width: 100vw;
-            height: 100vh;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: #fff;
-            opacity: 0;
+        #welcome-text {
+            animation: fadeInOut 4s ease-out infinite alternate;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="strobe"></div>
-
-    <script>
-        const strobe = document.getElementById('strobe');
-        let isOn = false;
-
-        function toggleStrobe() {
-            isOn = !isOn;
-            strobe.style.opacity = isOn ? 1 : 0;
-
-            if (isOn) {
-                // Adjust the interval (in milliseconds) for the strobe effect
-                setInterval(toggleStrobe, 100);
-            }
-        }
-
-        // Call the function to start the strobe effect
-        toggleStrobe();
-    </script>
+    <div id="welcome-text">
+        <h1>Bienvenue sur notre Page Chill</h1>
+        <p>Détendez-vous et profitez de l'ambiance.</p>
+    </div>
 </body>
 </html>
